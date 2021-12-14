@@ -112,6 +112,10 @@ body{
   width: 20vw;
 }
 
+.favourties-table{
+  padding: 3rem;
+}
+
 /* This is for mobile view */
 @media screen and (max-width: 400px){
   .banner-card{
@@ -147,9 +151,6 @@ body{
   }
     
   
-
-
-
 }
 
 
