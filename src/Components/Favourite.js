@@ -36,7 +36,6 @@ export default class Favourite extends Component {
             currgen: genre
         })
     }
-
     sortPopularityDesc=()=>{
         let temp = this.state.movies;
         temp.sort(function(objA,objB){
@@ -55,7 +54,6 @@ export default class Favourite extends Component {
             movies:[...temp]
         })
     }
-
     sortRatingDesc=()=>{
         let temp = this.state.movies;
         temp.sort(function(objA,objB){
@@ -87,7 +85,6 @@ export default class Favourite extends Component {
         })
         localStorage.setItem("movies-app",JSON.stringify(newarr))
     }
-    
     handleLimit = (e) => {
         if(e.target.value >= 5 && e.target.value <= 9){
             this.setState({
@@ -99,6 +96,7 @@ export default class Favourite extends Component {
             })
         }
     }
+
     render() {
         // let movie = movies.results;
         let genreids = {
@@ -162,8 +160,8 @@ export default class Favourite extends Component {
                             
                             <div className="col-lg-9 col-sm-12 favourites-table">
                                 <div className="row">
-                                    <input type="text" className="input-group-text col" onChange={(e) => this.setState({currText: e.target.value})} value={this.state.currText}/>
-                                    <input type="number" className="input-group-text col" onChange={(e) => this.handleLimit(e)} />
+                                    <input type="text" className="input-group-text col" onChange={(e) => this.setState({currText: e.target.value})} value={this.state.currText} placeholder='Search'/>
+                                    <input type="number" className="input-group-text col" onChange={(e) => this.handleLimit(e)} placeholder='Row Count'  />
                                 </div>
                                 <div className="row">
                                     <table class="table">
