@@ -182,9 +182,7 @@ export default class Favourite extends Component {
                                                         <td>{genreids[movieObj.genre_ids[0]]}</td>
                                                         <td>{movieObj.popularity}</td>
                                                         <td>{movieObj.vote_average}</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-danger">Delete</button>
-                                                        </td>
+                                                        <td><button type="button" class="btn btn-danger" onClick={()=>this.handleDelete(movieObj.id)}>Delete</button></td>
 
                                                     </tr>
                                                 ))
