@@ -136,7 +136,7 @@ export default class Movies extends Component {
 
                                                     // Method -> 2
                                                     this.state.hover === movieObj.id && 
-                                                    <a href="#" className="btn btn-primary movies-button" onClick={() => this.handleFavourites(movieObj)}>{this.state.favourites.includes(movieObj.id) ? "Remove from Favourites" : "Add to Favourites"}
+                                                    <a className="btn btn-primary movies-button" onClick={() => this.handleFavourites(movieObj)}>{this.state.favourites.includes(movieObj.id) ? "Remove from Favourites" : "Add to Favourites"}
                                                     </a>
                                                 }
                                                 
@@ -154,10 +154,17 @@ export default class Movies extends Component {
                         <ul class="pagination">
                             <li class="page-item"><a class="page-link" onClick={this.handleLeft}>Previous</a></li>
                             {
+                                this.state.parr.length <= 2? 
+
                                 this.state.parr.map((value) => (
                                     <li class="page-item"><a class="page-link" onClick={() => {this.handleClick(value)}}>{value}</a></li>
 
-                                ))
+                                )) :
+                               <>
+                                  <li class="page-item"><a class="page-link" onClick={() => {this.handleClick(this.state.parr[0])}}>{this.state.parr[0]}</a></li>
+                                  <li class="page-item"><a class="page-link" onClick={() => {this.handleClick(this.state.parr[1])}}>{this.state.parr[1]}</a></li>
+                                </>
+
                             }
                             <li class="page-item"><a class="page-link" onClick={this.handleRight}>Next</a></li>
                         </ul>

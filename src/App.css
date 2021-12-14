@@ -114,6 +114,7 @@ body{
 
 .favourties-table{
   padding: 3rem;
+  overflow: auto;
 }
 
 /* This is for mobile view */
